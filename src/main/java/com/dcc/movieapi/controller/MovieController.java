@@ -56,4 +56,9 @@ public class MovieController {
     public List<Movie> getMoviesByGenre(@PathVariable String genre) {
         return movieService.getMoviesByGenre(genre);
     }
+
+    @GetMapping("/movies/GetByName/{name}")
+    public List<Movie> getMoviesByName(@PathVariable String name) {
+        return movieService.getMoviesByName(name);
+    }
 }
