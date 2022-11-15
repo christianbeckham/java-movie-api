@@ -32,4 +32,9 @@ public class MovieController {
     public Movie updateMovieById(@RequestBody Movie movieData, @PathVariable Integer id) {
         return movieService.updateMovieById(movieData, id);
     }
+
+    @DeleteMapping("/movies/{id}")
+    public void deleteMovieById(@PathVariable Integer id) {
+        movieService.deleteMovieById(id);
+    }
 }
