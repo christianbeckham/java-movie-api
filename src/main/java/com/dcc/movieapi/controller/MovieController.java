@@ -19,7 +19,12 @@ public class MovieController {
     }
 
     @GetMapping("/movies")
-    public List<Movie> findAllMovies() {
+    public List<Movie> findAllMovies(
+            @RequestParam(required = false) String genre,
+            @RequestParam(required = false) String name
+    ) {
+        if (genre != null) { return movieService.getMoviesByGenre(genre); }
+        if (name != null) { return movieService.getMoviesByName(name); }
         return movieService.getAllMovies();
     }
 
