@@ -39,4 +39,12 @@ public class MovieService {
     public void deleteMovieById(Integer id) {
         movieRepository.deleteById(id);
     }
+
+    public List<Movie> getMoviesByGenre(String genre) {
+        return movieRepository.findAll().stream().filter(m -> m.getGenre().equalsIgnoreCase(genre)).toList();
+    }
+
+    public List<Movie> getMoviesByName(String name) {
+        return movieRepository.findAll().stream().filter(m -> m.getName().equalsIgnoreCase(name)).toList();
+    }
 }
