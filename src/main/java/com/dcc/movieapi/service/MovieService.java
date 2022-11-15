@@ -24,4 +24,15 @@ public class MovieService {
     public Movie getMovieById(Integer id) {
         return movieRepository.findById(id).orElse(null);
     }
+
+    public Movie updateMovieById(Movie newData, Integer id) {
+        Movie movieToUpdate = movieRepository.findById(id).orElse(null);
+
+        if (movieToUpdate != null) {
+            newData.setId(id);
+            return movieRepository.save(newData);
+        }
+
+        return null;
+    }
 }
