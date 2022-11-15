@@ -10,8 +10,8 @@ public class MovieService {
 
     @Autowired
     private MovieRepository movieRepository;
-    
-    public Movie save_movie(Movie movie) {
+
+    public Movie saveMovie(Movie movie) {
         return movieRepository.save(movie);
     }
 }
