@@ -51,4 +51,9 @@ public class MovieController {
     public void deleteMovieById(@PathVariable Integer id) {
         movieService.deleteMovieById(id);
     }
+
+    @GetMapping("/movies/genre/{genre}")
+    public List<Movie> getMoviesByGenre(@PathVariable String genre) {
+        return movieService.getMoviesByGenre(genre);
+    }
 }
