@@ -19,14 +19,23 @@ public class MovieController {
     }
 
     @GetMapping("/movies")
-    public List<Movie> findAllMovies(
-            @RequestParam(required = false) String genre,
-            @RequestParam(required = false) String name
-    ) {
-        if (genre != null) { return movieService.getMoviesByGenre(genre); }
-        if (name != null) { return movieService.getMoviesByName(name); }
+    public List<Movie> findAllMovies() {
         return movieService.getAllMovies();
     }
+
+// Method with optional request parameters
+// to use the same endpoint of "/movies"
+// as the above method
+//
+//    @GetMapping("/movies")
+//    public List<Movie> findAllMovies(
+//            @RequestParam(required = false) String genre,
+//            @RequestParam(required = false) String name
+//    ) {
+//        if (genre != null) { return movieService.getMoviesByGenre(genre); }
+//        if (name != null) { return movieService.getMoviesByName(name); }
+//        return movieService.getAllMovies();
+//    }
 
     @GetMapping("/movies/{id}")
     public Movie getMovieById(@PathVariable Integer id) {
