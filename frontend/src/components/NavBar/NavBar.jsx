@@ -3,7 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import AdbIcon from "@mui/icons-material/Adb";
+import Theaters from "@mui/icons-material/Theaters";
 
 const NavBar = () => {
 	return (
@@ -11,17 +11,17 @@ const NavBar = () => {
 			<AppBar position="static">
 				<Container maxWidth="xl">
 					<Toolbar disableGutters>
-						<AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+						<Theaters sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
 						<Typography
-							variant="h6"
+							variant="h5"
 							noWrap
-							component="p"
+							component="h1"
 							sx={{
 								mr: 2,
 								display: { xs: "none", md: "flex" },
 								fontFamily: "monospace",
 								fontWeight: 700,
-								letterSpacing: ".2rem",
+								letterSpacing: ".15rem",
 								color: "inherit",
 								textDecoration: "none",
 							}}
